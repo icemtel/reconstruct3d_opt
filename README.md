@@ -1,8 +1,10 @@
 # Reconstruction of 3D curve based on two 2D projections
 
-Code used to reconstruct cilium shapes, presented in [1]
+Python code to reconstruct a three-dimensional space curve from two orthogonal two-dimensional projections. 
+This code has been used in reference [1] to digitalize three-dimensional shapes of a beating cilium 
+based on original stereoscopic high-speed video-microscopy by Machemer et al.
 
-### Requirements
+### Version requirements
 
 ```
 scipy>=1.2.1
@@ -10,28 +12,26 @@ matplotlib>=3.0
 vedo>=2020.4 # only for 3D visualization
 ```
 
-### Literature
+### External links
 
-Optimization
+Optimization with SciPy
 - Tutorial https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html
 - Documentation https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize
 - How to choose a method https://scipy-lectures.org/advanced/mathematical_optimization/index.html
 
-
-### INFO
-- Data set: Machemer 1974, Naitoh 1984 -> Fig.2; points were manually extracted via illustrator -> export to svg;
-- Description of coordinate system in curve3d.py
+### Data set
+- Time sequences of three-dimensional shapes of beating cilia on the surface of unicellular Paramecium had been recorded by Machemer using high-speed video-microscopyin with stereoscopic recording of orthogonal two-dimensional projections in 1972; this cilia beat pattern was subsequently presented in Figure 2 of Naitoh et al. 1984. We had manually digitalized this historic data set by manual tracking (using manual tracking in Adobe Illustrator and export as svg-files).
+- The coordinate system used is described in `curve3d.py'
 
 ### Choice of parameters 
-
-- For testing: use 30 points - good value to test parameters. More points is helpful if curvature is locally big.
+- Default: 30 control points; if local curvature is large, more control points should be used.
 
 #### Choice of weights
-- Weights are dimensionless.
+- Regularization weights are dimensionless
 - Start with smooth_weight = 0; With visual inspection find the best points_weight.
-  - If points_weight is too small; the curves will be parallel, but points won't necessarily align.
-  - If points_weight is too big (and no smoothing) - projection points might oscillate around the target curve.
-- Increase smooth_weight until smoothing starts to destroy some features of the curve.
+  - If points_weight is too small; the curves will be parallel, but points will not necessarily align.
+  - If points_weight is too large (and no smoothing) - projection points might oscillate around the target curve.
+- Increase smooth_weight until smoothing starts to mask essential features of the space curve.
 
 ### Scripts
 
@@ -62,7 +62,6 @@ Optimization
    - Perfect fit, (30,30)
     
 #### Pipeline steps
-
 
 `pipe00_rescale_v4.py`
 - reconstruct 3D coordinates; introduce optimization penalty for kinks -> ensure smoothness of the curve.
@@ -119,8 +118,8 @@ Details:
 ### Authors
 
 - Anton Solovev anton.solovev@tu-dresden.de
-- Benjamin Friedrich benjamin.m.friedrich@tu-dresden.de
+- Benjamin M. Friedrich benjamin.m.friedrich@tu-dresden.de
 
 Publication to cite: [1]
 
-[1] [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x);  [pre-print](https://arxiv.org/abs/2010.08111 ) 
+[1] [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x);  also available on arXiv [](https://arxiv.org/abs/2010.08111 ) 

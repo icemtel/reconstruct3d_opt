@@ -20,11 +20,8 @@ Optimization with SciPy
 - How to choose a method https://scipy-lectures.org/advanced/mathematical_optimization/index.html
 
 ### Data set
-- Time sequences of three-dimensional shapes of beating cilia on the surface of unicellular Paramecium had been recorded by Machemer using high-speed video-microscopyin with stereoscopic recording of orthogonal two-dimensional projections in 1972; this cilia beat pattern was subsequently presented in Figure 2 of Naitoh et al. 1984. We had manually digitalized this historic data set by manual tracking (using manual tracking in Adobe Illustrator and export as svg-files).
+- Time sequences of three-dimensional shapes of beating cilia on the surface of unicellular Paramecium had been recorded by Machemer using high-speed video-microscopy in with stereoscopic recording of orthogonal two-dimensional projections in 1972; this cilia beat pattern was subsequently presented in Figure 2 of Naitoh et al. 1984. We had manually digitalized this historic data set by manual tracking (using manual tracking in Adobe Illustrator and export as svg-files).
 - The coordinate system used is described in `curve3d.py'
-
-### Choice of parameters 
-- Default: 30 control points; if local curvature is large, more control points should be used.
 
 #### Choice of weights
 - Regularization weights are dimensionless
@@ -65,7 +62,8 @@ Optimization with SciPy
 
 `pipe00_rescale_v4.py`
 - reconstruct 3D coordinates; introduce optimization penalty for kinks -> ensure smoothness of the curve.
-- Final params: N = 60 M = 60 eps = 10 ** -3 ds_eps = 10 ** -3 points_weight = 100 smooth_weight = 40
+- Final params: `N = 60` `M = 60` `eps = 1e-3` `ds_eps = 1e-3` `points_weight = 100` `smooth_weight = 40`.
+  [May use smaller N=M=30 to compute faster while testing]
 
 `pipe01_combine_coords_in_single_file.py`
 - store x coordinates for each shape in a single file. Same for y,z.

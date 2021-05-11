@@ -111,7 +111,11 @@ Details:
   `vis01b_plot_shapes_pipe00_and_final.py`
    plot shapes after different steps
 
+- `vis02_plot_angle_kymograph.py`
+   kymograph of angles $\theta$, $\psi$
 
+- `vis03_plot_tangent_product_kymograph.py`
+    kymograph of tangent dot product
 #### Tests
 
 - `test00_check_angle_reconstruction.py` check that Euclidean coordinates can be correctly reconstructed with local angle representation.

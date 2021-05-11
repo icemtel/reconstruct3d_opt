@@ -1,9 +1,7 @@
 '''
-Checked: the same when used angles directly from saved results.
-
 Result:
 - tangents change slowly
-- curvature calculation is wrong
+- curvature calculation - TODO might be wrong; TODO - fix
 '''
 
 import os.path

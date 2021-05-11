@@ -123,4 +123,4 @@ Details:
 
 Publication to cite: [1]
 
-[1] [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x;  [pre-print](https://arxiv.org/abs/2010.08111 ) 
+[1] [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x);  [pre-print](https://arxiv.org/abs/2010.08111 ) 

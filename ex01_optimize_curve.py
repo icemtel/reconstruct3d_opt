@@ -46,7 +46,7 @@ def f(params, r0, xx0, yy0, xx20, zz0):  # Minimization target
     xy_penalty = projection_penalty(xx, yy, xx0, yy0)
     xz_penalty = projection_penalty(xx, zz, xx20, zz0)
     # angle_penalty =
-    # TODO: normalize by projection length?
+    # MAYBE: normalize by projection length?
     penalty = xy_penalty + xz_penalty
     return penalty
 

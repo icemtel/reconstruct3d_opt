@@ -100,8 +100,7 @@ output_folder_angles = os.path.join(output_folder, 'angles')
 os.makedirs(output_folder, exist_ok=True)
 os.makedirs(output_folder_angles, exist_ok=True)
 
-# TODO: rename
-x = [] # 1st dimension = phase/time; 2nd dimension = position along the curve
+x = [] # will be a list of arrays: 1st dimension = phase/time; 2nd dimension = position along the curve
 y = []
 x2 = []
 z = []

@@ -120,8 +120,8 @@ Details:
 
 ### Authors
 
-- Anton Solovev anton.solovev@tu-dresden.de
-- Benjamin M. Friedrich benjamin.m.friedrich@tu-dresden.de
+- [Anton Solovev](https://github.com/icemtel)
+- [Benjamin M. Friedrich](https://cfaed.tu-dresden.de/friedrich-home) benjamin.m.friedrich@tu-dresden.de
 
 Publication to cite: [1]
 

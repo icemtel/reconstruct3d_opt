@@ -33,7 +33,7 @@ vedo>=2020.4 # only for 3D visualization
   In folder `data/raw/`, files `x0-#.dat`, `y0-#.dat` describe one projection of a shape,
    `x20-#.dat`, `z0-#.dat` describe the second orthogonal projection.
 - We found a mismatch between scale of projections
-  (i.e., $\max{x_j}-\min{x_j} \neq \max{x^{(2)}_j}-\min{x^{(2)}_j}- $
+  (i.e., $\max{x_j}-\min{x_j} \neq \max{x^{(2)}_j}-\min{x^{(2)}_j}$
   We rescaled the second projection by a constant factor. Results are in `data/rescale/`. 
   (For reference, the original matlab scripts are present in `data/`.)
   

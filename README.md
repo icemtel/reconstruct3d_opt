@@ -3,15 +3,22 @@
 - Python code to reconstruct a three-dimensional space curve from two orthogonal two-dimensional projections. 
 - This code has been used in reference [1] to digitalize three-dimensional shapes of a beating cilium 
 based on original stereoscopic high-speed video-microscopy by Machemer et al.
-- Final result (reconstructed 3D coordinates of the cilium shapes) can be found in `res/pipe_final/`.
+  
+- Final results (3D coordinates of shapes) can be found in `res/pipe_final/`.
+- Additionally, in `shapes_final_manuscript/shapes_data` are the shapes, originally obtained for the reference [1]. 
+  (The shapes slightly differ (`dx/L < 0.03`) from the ones presented  in  `res/pipe_final/`
+   because of different package versions used).
 
 ### Version requirements
 
 ```
-scipy>=1.2.1
-matplotlib>=3.0
-vedo>=2020.4 # only for 3D visualization
+scipy=1.5.3
+numpy=1.19.4
+matplotlib=3.3.3
+vedo=2020.4.2 # only for 3D visualization
+vtk=8.2.0     # only for 3D visualization
 ```
+
 
 ### How-to: optimization with `scipy`
 
@@ -22,7 +29,7 @@ vedo>=2020.4 # only for 3D visualization
 
 ### Contents
 
-### Data set
+#### Data set
 
 - Time sequences of three-dimensional shapes of beating cilia on the surface of unicellular Paramecium had been recorded
   by Machemer using high-speed video-microscopy in with stereoscopic recording of orthogonal two-dimensional projections in 1972;
@@ -47,7 +54,8 @@ vedo>=2020.4 # only for 3D visualization
 #### Examples
 `ex00_optimize.py`
  - introduce scipy optimization tools
-`example_optimize_curve.py`
+
+`ex01_optimize_curve.py`
 - test reconstruction procedure on example curves
     
 #### Pipeline steps
@@ -120,4 +128,5 @@ Details:
 
 Publication to cite: [1]
 
-[1] [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x);  also available on [arXiv](https://arxiv.org/abs/2010.08111 ) 
+[1]: [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x);  also available on [arXiv](https://arxiv.org/abs/2010.08111 ) 
+[2]: [Solovev & Friedrich 2020b arXiv](https://arxiv.org/abs/2012.11741)

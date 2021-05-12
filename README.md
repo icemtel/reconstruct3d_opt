@@ -113,10 +113,6 @@ Details:
 - `vis03_plot_tangent_product_kymograph.py`
     kymograph of tangent dot product
   
-#### Tests
-
-- `test00_check_angle_reconstruction.py` check that Euclidean coordinates can be correctly reconstructed with local angle representation.
-
 ### Authors
 
 - [Anton Solovev](https://github.com/icemtel)

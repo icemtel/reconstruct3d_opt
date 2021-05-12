@@ -38,31 +38,16 @@ Optimization
 #### Reusable code
 
 `curve3d.py`
+ - construct 3d curve by defining segments
+ - reconstruct segments information from curve points
 
 #### Examples
 `ex00_optimize.py`
- - get used to scipy optimization tools
-`curve3d.py`
- - construct 3d curve by defining segments
- - reconstruct segments information from curve points
+ - introduce scipy optimization tools
 `example_optimize_curve.py`
- - Try to apply optimization tools to fit 3d curve to projections (simple, e.g. a line)
- - Line example:
-   - works good, when M=30 (and tol at least 10 ** -3); If M=20, then points visibly oscillate around the line
-   - Good, even when initial guess is very far off
- - Helix - OK
- - Anisotropic helix ( a/b =27):
-   - Not good precision with N,M = (30,15) points; (30,30)
-   - Didn't finish in reasonable time with 40 points
-   - Better initial conditions: fits xz (smaller projection) good, but in general fails
- - Anisotropic helix (a/b = 9): initial conditions - Helix + a lot of noise
-   - Works almost fine; probably just need more control points
-   - (60,60) points -> fits almost perfectly
- - Helix - different projections: x = cos(s)
-   - Perfect fit, (30,30)
+- test reconstruction procedure on example curves
     
 #### Pipeline steps
-
 
 `pipe00_rescale_v4.py`
 - reconstruct 3D coordinates; introduce optimization penalty for kinks -> ensure smoothness of the curve.

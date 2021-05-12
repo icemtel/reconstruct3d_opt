@@ -54,12 +54,14 @@ vedo>=2020.4 # only for 3D visualization
 #### Pipeline steps
 
 `pipe00_rescale_v4.py`
-- Reconstruct 3D coordinates; introduce optimization penalty for kinks -> ensure smoothness of the curve.
-- Regularization weights are dimensionless
-- Started with `smooth_weight` = 0; With visual inspection found the best points_weight.
+- Reconstruct 3D coordinates via optimization procedure to ensure smoothness of the curve.
+  Optimization have 3 terms: "points", "tangents", "smoothness".
+- Regularization weights are dimensionless. 
+- Started with `smooth_weigh=0`, smooth_weight=0` 
+  (optimize only for alignment of tangent vectors). With visual inspection found the best points_weight.
   - When `points_weight` is too small; the curves will be parallel, but points will not necessarily align.
   - When `points_weight` is too large (and no smoothing) - projection points oscillate around the target curve.
-  - Increased `smooth_weight` until smoothing starts to mask essential features of the space curve.
+- Increased `smooth_weight` until smoothing starts to mask essential features of the space curve.
 - Final params: `N = 60` `M = 60` `eps = 1e-3` `ds_eps = 1e-3` `points_weight = 100` `smooth_weight = 40`.
   [May use smaller N=M=30 to compute faster while testing]
   

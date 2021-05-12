@@ -1,8 +1,9 @@
 # Reconstruction of 3D curve based on two 2D projections
 
-Python code to reconstruct a three-dimensional space curve from two orthogonal two-dimensional projections. 
-This code has been used in reference [1] to digitalize three-dimensional shapes of a beating cilium 
+- Python code to reconstruct a three-dimensional space curve from two orthogonal two-dimensional projections. 
+- This code has been used in reference [1] to digitalize three-dimensional shapes of a beating cilium 
 based on original stereoscopic high-speed video-microscopy by Machemer et al.
+- Final result (reconstructed 3D coordinates of the cilium shapes) can be found in `res/pipe_final/`.
 
 ### Version requirements
 
@@ -20,8 +21,6 @@ vedo>=2020.4 # only for 3D visualization
 
 
 ### Contents
-
-**Final results** (reconstructed 3D coordinates of curves): `res/pipe_final/`.
 
 ### Data set
 

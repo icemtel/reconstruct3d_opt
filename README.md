@@ -99,7 +99,6 @@ Details:
 `pipe04_shift_phase_rescale_length_mirror.py`
 - Shift phase, such that $\varphi \approx 0$ at the beginning of the recovery stroke.
 - rescale (from px to micron)
-- 
 - FIX mirrored data; -> to have the correct 3D orientation, we mirror the shapes [see shapes in Naitoh1984]
 
 `pipe05_get_normals.py`

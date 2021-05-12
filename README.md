@@ -62,7 +62,7 @@ vtk=8.2.0     # only for 3D visualization
 
 `pipe00_rescale_v4.py`
 - Reconstruct 3D coordinates via optimization procedure to ensure smoothness of the curve.
-  Optimization have 3 terms: "points", "tangents", "smoothness".
+  Optimization penalty has 3 terms: "points", "tangents", "smoothness".
 - Regularization weights are dimensionless. 
 - Started with `smooth_weigh=0`, smooth_weight=0` 
   (optimize only for alignment of tangent vectors). With visual inspection found the best points_weight.

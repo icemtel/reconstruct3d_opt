@@ -12,31 +12,38 @@ matplotlib>=3.0
 vedo>=2020.4 # only for 3D visualization
 ```
 
-### External links
+### How-to: optimization with `scipy`
 
-Optimization with SciPy
 - Tutorial https://docs.scipy.org/doc/scipy/reference/tutorial/optimize.html
 - Documentation https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize
 - How to choose a method https://scipy-lectures.org/advanced/mathematical_optimization/index.html
 
+
+### Contents
+
+**Final results** (reconstructed 3D coordinates of curves): `res/pipe_final/`.
+
 ### Data set
-- Time sequences of three-dimensional shapes of beating cilia on the surface of unicellular Paramecium had been recorded by Machemer using high-speed video-microscopy in with stereoscopic recording of orthogonal two-dimensional projections in 1972; this cilia beat pattern was subsequently presented in Figure 2 of Naitoh et al. 1984. We had manually digitalized this historic data set by manual tracking (using manual tracking in Adobe Illustrator and export as svg-files).
-- The coordinate system used is described in `curve3d.py'
 
-#### Choice of weights
-- Regularization weights are dimensionless
-- Start with smooth_weight = 0; With visual inspection find the best points_weight.
-  - If points_weight is too small; the curves will be parallel, but points will not necessarily align.
-  - If points_weight is too large (and no smoothing) - projection points might oscillate around the target curve.
-- Increase smooth_weight until smoothing starts to mask essential features of the space curve.
-
-### Scripts
+- Time sequences of three-dimensional shapes of beating cilia on the surface of unicellular Paramecium had been recorded
+  by Machemer using high-speed video-microscopy in with stereoscopic recording of orthogonal two-dimensional projections in 1972;
+  this cilia beat pattern was subsequently presented in Figure 2 of Naitoh et al. 1984.
+- We manually digitalized this historic data set by manual tracking
+  (using manual tracking in Adobe Illustrator and export as svg-files).
+  In folder `data/raw/`, files `x0-#.dat`, `y0-#.dat` describe one projection of a shape,
+   `x20-#.dat`, `z0-#.dat` describe the second orthogonal projection.
+- We found a mismatch between scale of projections
+  (i.e., $\max{x_j}-\min{x_j} \neq \max{x^{(2)}_j}-\min{x^{(2)}_j}- $
+  We rescaled the second projection by a constant factor. Results are in `data/rescale/`. 
+  (For reference, the original matlab scripts are present in `data/`.)
+  
 
 #### Reusable code
 
 `curve3d.py`
- - construct 3d curve by defining segments
- - reconstruct segments information from curve points
+- construct 3d curve by defining segments
+- reconstruct segments information from curve points
+- Description of the coordinate system used.
 
 #### Examples
 `ex00_optimize.py`
@@ -47,10 +54,15 @@ Optimization with SciPy
 #### Pipeline steps
 
 `pipe00_rescale_v4.py`
-- reconstruct 3D coordinates; introduce optimization penalty for kinks -> ensure smoothness of the curve.
+- Reconstruct 3D coordinates; introduce optimization penalty for kinks -> ensure smoothness of the curve.
+- Regularization weights are dimensionless
+- Started with `smooth_weight` = 0; With visual inspection found the best points_weight.
+  - When `points_weight` is too small; the curves will be parallel, but points will not necessarily align.
+  - When `points_weight` is too large (and no smoothing) - projection points oscillate around the target curve.
+  - Increased `smooth_weight` until smoothing starts to mask essential features of the space curve.
 - Final params: `N = 60` `M = 60` `eps = 1e-3` `ds_eps = 1e-3` `points_weight = 100` `smooth_weight = 40`.
   [May use smaller N=M=30 to compute faster while testing]
-
+  
 `pipe01_combine_coords_in_single_file.py`
 - store x coordinates for each shape in a single file. Same for y,z.
 
@@ -85,7 +97,7 @@ Details:
 - also extract direction of normal vectors (some normals; not the Frenet frame).
 
 
-#### Visualization
+#### Visualizations
 
 - `vis00_calc_length.py` visualize shape lengths after `pipe00`
 
@@ -99,6 +111,7 @@ Details:
 
 - `vis03_plot_tangent_product_kymograph.py`
     kymograph of tangent dot product
+  
 #### Tests
 
 - `test00_check_angle_reconstruction.py` check that Euclidean coordinates can be correctly reconstructed with local angle representation.

@@ -64,7 +64,7 @@ vtk=8.2.0     # only for 3D visualization
 - Reconstruct 3D coordinates via optimization procedure to ensure smoothness of the curve.
   Optimization penalty has 3 terms: "points", "tangents", "smoothness".
 - Regularization weights are dimensionless. 
-- Started with `smooth_weigh=0`, smooth_weight=0` 
+- Started with `smooth_weight=0` 
   (optimize only for alignment of tangent vectors). With visual inspection found the best points_weight.
   - When `points_weight` is too small; the curves will be parallel, but points will not necessarily align.
   - When `points_weight` is too large (and no smoothing) - projection points oscillate around the target curve.

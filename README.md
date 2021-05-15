@@ -62,9 +62,9 @@ vtk=8.2.0     # only for 3D visualization
 
 `pipe00_rescale_v4.py`
 - Reconstruct 3D coordinates via optimization procedure to ensure smoothness of the curve.
-  Optimization have 3 terms: "points", "tangents", "smoothness".
+  Optimization penalty has 3 terms: "points", "tangents", "smoothness".
 - Regularization weights are dimensionless. 
-- Started with `smooth_weigh=0`, smooth_weight=0` 
+- Started with `smooth_weight=0` 
   (optimize only for alignment of tangent vectors). With visual inspection found the best points_weight.
   - When `points_weight` is too small; the curves will be parallel, but points will not necessarily align.
   - When `points_weight` is too large (and no smoothing) - projection points oscillate around the target curve.
@@ -99,7 +99,6 @@ Details:
 `pipe04_shift_phase_rescale_length_mirror.py`
 - Shift phase, such that $\varphi \approx 0$ at the beginning of the recovery stroke.
 - rescale (from px to micron)
-- 
 - FIX mirrored data; -> to have the correct 3D orientation, we mirror the shapes [see shapes in Naitoh1984]
 
 `pipe05_get_normals.py`
@@ -128,5 +127,5 @@ Details:
 
 Publication to cite: [1]
 
-[1]: [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x);  also available on [arXiv](https://arxiv.org/abs/2010.08111 ) 
-[2]: [Solovev & Friedrich 2020b arXiv](https://arxiv.org/abs/2012.11741)
+- [1]: [Solovev & Friedrich 2020 EPJ E ST](https://link.springer.com/article/10.1140/epje/s10189-021-00016-x);  also available on [arXiv](https://arxiv.org/abs/2010.08111 ) 
+- [2]: [Solovev & Friedrich 2020b arXiv](https://arxiv.org/abs/2012.11741)

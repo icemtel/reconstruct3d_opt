@@ -66,8 +66,8 @@ vtk=8.2.0     # only for 3D visualization
 - Regularization weights are dimensionless. 
 - Started with `smooth_weight=0` 
   (optimize only for alignment of tangent vectors). With visual inspection found the best points_weight.
-  - When `points_weight` is too small; the curves will be parallel, but points will not necessarily align.
-  - When `points_weight` is too large (and no smoothing) - projection points oscillate around the target curve.
+  - When `points_weight` is too small, projections of the fitted curve will be parallel to the target, but points will not necessarily align.
+  - When `points_weight` is too large (and no smoothing) - projection points will oscillate around the target curve.
 - Increased `smooth_weight` until smoothing starts to mask essential features of the space curve.
 - Final params: `N = 60` `M = 60` `eps = 1e-3` `ds_eps = 1e-3` `points_weight = 100` `smooth_weight = 40`.
   [May use smaller N=M=30 to compute faster while testing]
